@@ -68,7 +68,7 @@ jobs:
     - run: poetry install --no-interaction -E "spark linter"
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
     - name: Lint with flake8
-      run: poetry run flake8 --statistics --count --show-source
+      run: poetry run flake8 --statistics --count --show-source .
     - run: poetry run make unit-test
     - run: poetry run make test-coverage
 
