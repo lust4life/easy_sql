@@ -29,7 +29,7 @@ jobs:
         tag=${GITHUB_REF_NAME}
         version=${tag#v}
         old_version=$(poetry version -s)
-        echo "tags: $tag , version: $version"
+        echo "tags: $tag , version: $version , old_version: $old_version"
         echo "::set-output name=tag::${tag}"
         echo "::set-output name=version::${version}"
         echo "::set-output name=version_changed::$( [ $version = $old_version ] && echo 'true' )"
